@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.data.mapper.conParamMapper">
+  <resultMap id="BaseResultMap" type="com.data.bean.conParam">
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="GROUP_CODE" jdbcType="NVARCHAR2" property="groupCode" />
+    <result column="GROUP_NAME" jdbcType="NVARCHAR2" property="groupName" />
+    <result column="NAME" jdbcType="NVARCHAR2" property="name" />
+    <result column="CODE" jdbcType="NVARCHAR2" property="code" />
+    <result column="VALUE" jdbcType="NVARCHAR2" property="value" />
+    <result column="DESCRIPTION" jdbcType="NVARCHAR2" property="description" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, GROUP_CODE, GROUP_NAME, NAME, CODE, VALUE, DESCRIPTION
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from CON_PARAM
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from CON_PARAM
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.data.bean.conParam">
+    insert into CON_PARAM (ID, GROUP_CODE, GROUP_NAME, 
+      NAME, CODE, VALUE, 
+      DESCRIPTION)
+    values (#{id,jdbcType=DECIMAL}, #{groupCode,jdbcType=NVARCHAR2}, #{groupName,jdbcType=NVARCHAR2}, 
+      #{name,jdbcType=NVARCHAR2}, #{code,jdbcType=NVARCHAR2}, #{value,jdbcType=NVARCHAR2}, 
+      #{description,jdbcType=NVARCHAR2})
+  </insert>
+  <insert id="insertSelective" parameterType="com.data.bean.conParam">
+    insert into CON_PARAM
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="groupCode != null">
+        GROUP_CODE,
+      </if>
+      <if test="groupName != null">
+        GROUP_NAME,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="code != null">
+        CODE,
+      </if>
+      <if test="value != null">
+        VALUE,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="groupCode != null">
+        #{groupCode,jdbcType=NVARCHAR2},
+      </if>
+      <if test="groupName != null">
+        #{groupName,jdbcType=NVARCHAR2},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=NVARCHAR2},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=NVARCHAR2},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=NVARCHAR2},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=NVARCHAR2},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.data.bean.conParam">
+    update CON_PARAM
+    <set>
+      <if test="groupCode != null">
+        GROUP_CODE = #{groupCode,jdbcType=NVARCHAR2},
+      </if>
+      <if test="groupName != null">
+        GROUP_NAME = #{groupName,jdbcType=NVARCHAR2},
+      </if>
+      <if test="name != null">
+        NAME = #{name,jdbcType=NVARCHAR2},
+      </if>
+      <if test="code != null">
+        CODE = #{code,jdbcType=NVARCHAR2},
+      </if>
+      <if test="value != null">
+        VALUE = #{value,jdbcType=NVARCHAR2},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=NVARCHAR2},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.data.bean.conParam">
+    update CON_PARAM
+    set GROUP_CODE = #{groupCode,jdbcType=NVARCHAR2},
+      GROUP_NAME = #{groupName,jdbcType=NVARCHAR2},
+      NAME = #{name,jdbcType=NVARCHAR2},
+      CODE = #{code,jdbcType=NVARCHAR2},
+      VALUE = #{value,jdbcType=NVARCHAR2},
+      DESCRIPTION = #{description,jdbcType=NVARCHAR2}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <resultMap id="BaseResultMap" type="com.data.bean.conParam">
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="GROUP_CODE" jdbcType="NVARCHAR2" property="groupCode" />
+    <result column="GROUP_NAME" jdbcType="NVARCHAR2" property="groupName" />
+    <result column="NAME" jdbcType="NVARCHAR2" property="name" />
+    <result column="CODE" jdbcType="NVARCHAR2" property="code" />
+    <result column="VALUE" jdbcType="NVARCHAR2" property="value" />
+    <result column="DESCRIPTION" jdbcType="NVARCHAR2" property="description" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, GROUP_CODE, GROUP_NAME, NAME, CODE, VALUE, DESCRIPTION
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from CON_PARAM
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from CON_PARAM
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.data.bean.conParam">
+    insert into CON_PARAM (ID, GROUP_CODE, GROUP_NAME, 
+      NAME, CODE, VALUE, 
+      DESCRIPTION)
+    values (#{id,jdbcType=DECIMAL}, #{groupCode,jdbcType=NVARCHAR2}, #{groupName,jdbcType=NVARCHAR2}, 
+      #{name,jdbcType=NVARCHAR2}, #{code,jdbcType=NVARCHAR2}, #{value,jdbcType=NVARCHAR2}, 
+      #{description,jdbcType=NVARCHAR2})
+  </insert>
+  <insert id="insertSelective" parameterType="com.data.bean.conParam">
+    insert into CON_PARAM
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="groupCode != null">
+        GROUP_CODE,
+      </if>
+      <if test="groupName != null">
+        GROUP_NAME,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="code != null">
+        CODE,
+      </if>
+      <if test="value != null">
+        VALUE,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="groupCode != null">
+        #{groupCode,jdbcType=NVARCHAR2},
+      </if>
+      <if test="groupName != null">
+        #{groupName,jdbcType=NVARCHAR2},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=NVARCHAR2},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=NVARCHAR2},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=NVARCHAR2},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=NVARCHAR2},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.data.bean.conParam">
+    update CON_PARAM
+    <set>
+      <if test="groupCode != null">
+        GROUP_CODE = #{groupCode,jdbcType=NVARCHAR2},
+      </if>
+      <if test="groupName != null">
+        GROUP_NAME = #{groupName,jdbcType=NVARCHAR2},
+      </if>
+      <if test="name != null">
+        NAME = #{name,jdbcType=NVARCHAR2},
+      </if>
+      <if test="code != null">
+        CODE = #{code,jdbcType=NVARCHAR2},
+      </if>
+      <if test="value != null">
+        VALUE = #{value,jdbcType=NVARCHAR2},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=NVARCHAR2},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.data.bean.conParam">
+    update CON_PARAM
+    set GROUP_CODE = #{groupCode,jdbcType=NVARCHAR2},
+      GROUP_NAME = #{groupName,jdbcType=NVARCHAR2},
+      NAME = #{name,jdbcType=NVARCHAR2},
+      CODE = #{code,jdbcType=NVARCHAR2},
+      VALUE = #{value,jdbcType=NVARCHAR2},
+      DESCRIPTION = #{description,jdbcType=NVARCHAR2}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>
